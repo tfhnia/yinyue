@@ -7,19 +7,19 @@
  */
 
 //服务器IP 一般为localhost或者127.0.0.1
-define('CS_Sqlserver','127.0.0.1');
+define('CS_Sqlserver','localhost');
 
 //数据库名称
-define('CS_Sqlname','cscms');
+define('CS_Sqlname','cscms_4x');
 
 //数据库表前缀
-define('CS_SqlPrefix','v4_');
+define('CS_SqlPrefix','cscms_');
 
 //数据库用户名
 define('CS_Sqluid','root');
 
 //数据库密码
-define('CS_Sqlpwd','chz19970');
+define('CS_Sqlpwd','root');
 
 //数据库方式
 define('CS_Dbdriver','mysql');
@@ -37,7 +37,7 @@ define('CS_Cache_Dir','sql');
 define('CS_Cache_Time',7200);
 
 //encryption_key密钥
-define('CS_Encryption_Key','cscms_sKGmqvu4sL');
+define('CS_Encryption_Key','cscms_Fjq7IEKqA7');
 
 //后台口令卡总开关,1为开，0为关闭
 define('CS_Safe_Card',1);

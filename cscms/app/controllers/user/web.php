@@ -71,8 +71,7 @@ class Web extends Cscms_Controller {
 		   $this->load->library('csup');
 		   $this->csup->del($bgpic,'bgpic'); //É¾³ý¸½¼þ
 
-           $filepath=(UP_Mode==1)?'/'.date('Ym').'/'.date('d').'/'.$filename : '/'.date('Ymd').'/'.$filename;
-		   $edit['bgpic']=$filepath;
+		   $edit['bgpic']=date('Ym').'/'.date('d').'/'.$filename;
 		   $this->CsdjDB->get_update('user',$_SESSION['cscms__id'],$edit);
 
 		   $pic=piclink('bgpic',$edit['bgpic']).'?size=720*186';

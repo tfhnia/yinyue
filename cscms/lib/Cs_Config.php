@@ -1,18 +1,18 @@
 <?php
-define('Web_Name','程氏CMSv4'); //站点名称  
-define('Web_Url','localhost'); //站点域名  
-define('Web_Path','/yinyue/'); //站点路径  
-define('Admin_Code','root');  //后台验证码  
+define('Web_Name','程氏Cmsv4'); //站点名称  
+define('Web_Url','www.chshcms.com'); //站点域名  
+define('Web_Path','/'); //站点路径  
+define('Admin_Code','111');  //后台验证码  
 define('Web_Off',1);  //网站开关  
 define('Web_Onneir','网站升级中...');  //网站关闭内容  
-define('Web_Mode',0);  //网站运行模式  
+define('Web_Mode',3);  //网站运行模式  
 define('Html_Index','index.html');  //主页静态URL  
 define('Html_StopTime',2);  //生成间隔秒数  
 define('Html_PageNum',20);  //每页生成数量  
 define('Web_Icp','沪ICP备06000000号');  //网站ICP  
 define('Admin_QQ','848769359');  //站长QQ  
 define('Admin_Tel','1300000000');  //站长电话  
-define('Admin_Mail','wjchzndd@163.com');  //站长EMAIL  
+define('Admin_Mail','chshcms@qq.com');  //站长EMAIL  
 define('Web_Key','Dj小波|DJ黄子浩|Dj罗清|DJ文杰|DJ千里|Mc洋哥');  //热门搜索  
 define('Web_Count','统计代码');  //统计代码  
 define('Web_Title','程氏CMS'); //SEO-标题  
