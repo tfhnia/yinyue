@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" />
+  <link href="{cscms:indextempurl}css/pic.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script>
+  <script type="text/javascript" src="{cscms:indextempurl}js/pic.js"></script>
+</head> 
+<body>
+{cscms:head}
+   <div class="position"> 
+    <div class="text"> 
+     <span>当前位置：</span> 
+       <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('pic');{/cscmsphp}" title="相册首页">相册首页</a> &gt; <a href="[pic:classlink]" title="[pic:classname]">[pic:classname]</a> &gt; <strong>[pic:name]</strong> 
+    </div> 
+   </div> 
+   <div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div>
+   <div class="news_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="titles"><span>[pic:name](<span style="color:red" id="photoNavIndex">1</span>/[pic:count])</span></div> 
+      <div class="page_sort" style="width: 93px;"> 
+      <ul class="right">
+       <li class="current"><a target="_blank" id="downItem" href="[pic:url]">下载</a></li>
+      </ul> 
+      </div>
+	 </div>
+   <div class="newsintro"> 
+    <div class="head"> 
+     <span>日期：[pic:addtime style=Y-m-d]</span> 
+     <span>来源：{cscms:webname}</span> 
+	 <span>浏览：[pic:hits]</span> 
+    </div> 
+    <div class="content" style="width: 960px;">
+                <!-- 图片滚动 -->
+                <div class="pic">
+                   <div class="big">
+                        <a href="javascript:prevPic();" class="big_prev"></a>
+						<a href="javascript:prevPic();" class="area left_area" title="点击浏览上一张图片" style="cursor: url('{cscms:indextempurl}images/prev.cur'), auto;"></a>
+                        <span id="mainPic"><img width="960" id="bigPic" src="[pic:url]"></span>
+                        <a href="javascript:nextPic();" class="big_next"></a>
+						<a href="javascript:nextPic();" class="area right_area" title="点击浏览下一张图片" style="cursor: url('{cscms:indextempurl}images/next.cur'), auto;"></a>
+						<div class="piclist" id="addiv" style="z-index:20;display:none;">
+                        	<a href="javascript:closead();" class="close"></a>
+                        	<div class="ad">
+	                        	<a href="http://www.chshcms.com/" target="_blank" title="美女图片"><img src="{cscms:indextempurl}images/pic_ad.jpg" width="400" height="320"></a>
+	                        </div>
+                            <div class="tj">
+                            	<div class="bt">图片浏览完毕<a href="[pic:xlink]" target="_blank" title="下一图集">下一图集</a><a href="[pic:url link=show,id]" title="图片浏览">重新浏览</a></div>
+                                <div class="picList">
+                                    <ul id="recList1">
+									{cscms:pic table="pic_type" loop="4" sort="rand"}
+                                            <li>
+                                                    <a href="[pic:url link=show,id]" target="_blank" title="[pic:name]"><img src="[pic:pic dir=pic]" width="160" height="120"></a>
+                                                    <a href="[pic:url link=show,id]" target="_blank" title="[pic:name]" class="picTips">[pic:name]</a>
+                                            </li>
+									{/cscms:pic}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small clear">
+                    	<p class="prev" id="preGroup">
+                            <a href="[pic:slink]" title="[pic:sname]"><img src="[pic:spic]" width="93" height="72" alt="上一图集"></a><a href="[pic:slink]" class="gray">上一图集</a>
+                            </p>
+                        <div class="pic_list">
+                            <a href="javascript:prevGroup();" class="small_btn small_prev"></a>
+                            <ul id="lists_1">
+                            {cscms:pic table="pic" sid="auto" sort="id"}
+							<li id="thumb-[pic:i]"><a href="javascript:choose([pic:i]);"><img id="pic-[pic:i]" src="[pic:pic dir=pic]" width="95" height="72"></a><a data-i="[pic:i]" data-txt="[pic:content]" id="txt-[pic:i]" href="javascript:choose([pic:i]);" class="{if:[pic:i]==1}orange{else}gray{end if}">[pic:i]/[pic:count]</a></li>
+							{if:[pic:i]%7==0}</ul><ul id="lists_[pic:i]" style="display:none;">{end if}
+                            {/cscms:pic}
+							</ul>
+                            <a href="javascript:nextGroup();" class="small_btn small_next"></a>
+                        </div>
+                        <p class="next" id="nextGroup">
+                            <a href="[pic:xlink]" title="[pic:xname]"><img src="[pic:xpic]" width="93" height="72" alt="下一图集"></a><a href="[pic:xlink]" title="下一图集" class="gray">下一图集</a>
+                            </p>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <!-- 图片滚动 -->
+    </div> 
+   </div>
+   </div> 
+  </div> 
+
+  <div class="vmalbum_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="title"><span>推荐相册</span></div>   
+	 </div>
+    <div class="vmalbum_list"> 
+     <ul>
+	 {cscms:pic table="pic_type" loop="12" reco="1,2,3,4,5" stor="hits"}
+	  <li><a href="[pic:url link=show,id]" target="_blank" title="[pic:name]"><img src="[pic:pic dir=pic]?size=140*130"><span class="bg"></span><span class="txt">[pic:name]</span></a></li> 
+	 {/cscms:pic}
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+{cscms:indexbottom}
+</body>
+</html>

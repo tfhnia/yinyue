@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script> 
+</head> 
+<body>
+{cscms:indexhead}  
+<div class="position"> 
+    <div class="text"> 
+     <span>当前位置：</span> 
+       <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('dance');{/cscmsphp}" target="_blank" title="音乐">音乐</a> &gt; <a href="{cscmsphp}linkurl('topic','id',1,1,'dance');{/cscmsphp}" title="专辑">专辑</a> &gt; 
+	   <strong>[topic:name]</strong>
+    </div> 
+   </div>  
+  <div class="banner_top"></div> 
+  <div class="play_content"> 
+   <div class="banner"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+   <div class="left_bot"> 
+    <div class="recom"> 
+     <span> <h2>[topic:name]</h2></span> 
+     <div class="c1"> 
+      <div class="button"> 
+       <div class="but_left"> 
+        <input type="checkbox" hidefocus="true" id="selectRecommends" value="recommendList" class="allSelect" />
+        <label for="selectRecommends" onclick="playsong('xuan','f1');">全选/反选</label> 
+       </div> 
+       <div class="but_right"> 
+        <a class="btn_playback" title="弹出播放" onclick="playsong('play','f1');" href="javascript:;">播放</a> 
+       </div> 
+      </div> 
+     </div> 
+     <ul id="f1"> 
+	 {cscms:dance table="dance" field="id,name,uid" tid="auto" sort="addtime" order="desc"}
+      <li> 
+       <div class="song"> 
+        <span class="cbox"> <input type="checkbox" name="check" value="[dance:id]"/> </span> 
+        <div class="aleft"> 
+         <a class="mname" href="[dance:url link=play,id]">[dance:name]</a> 
+        </div> 
+       </div> 
+       <div class="face"> 
+        <a class="user_card" uid="[dance:uid]" href="[dance:url ulink=index]" target="_blank" title="[dance:user zd=nichen]"> <img width="20" src="[dance:user zd=logo]"/> </a> 
+       </div>
+	  </li> 
+	 {/cscms:dance}
+     </ul> 
+     <div class="c1"> 
+      <div class="button"> 
+       <div class="but_left"> 
+        <input type="checkbox" hidefocus="true" id="selectRecommend" value="recommendList" class="allSelect" />
+        <label for="selectRecommend" onclick="playsong('xuan','f1');">全选/反选</label> 
+       </div> 
+       <div class="but_right"> 
+        <a class="btn_playback" title="弹出播放" onclick="playsong('play','f1');" href="javascript:;">播放</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="right_bot"> 
+    <div class="introduce"> 
+     <span><h2>专辑信息</h2></span> 
+    </div> 
+    <div id="scrollbar2"> 
+     <ul> 
+      <li>所属分类：[topic:tags]</li> 
+      <li>发行公司：[topic:fxgs]</li> 
+      <li>所属语言：[topic:yuyan]</li> 
+      <li>发布时间：[topic:addtime style=Y-m-d]</li> 
+	  <li>试听：[topic:hits]次</li>
+	  <li>作者：<a href="[topic:url ulink=index]" target="_blank" title="[topic:user zd=nichen]">[topic:user zd=nichen]</a></li> 
+	  <p><img src="[topic:pic dir=dancetopic]" style="margin-top: 10px;margin-bottom: 10px;width: 140px;height: 140px;" title="[topic:name]" /></p>
+	  <p>专辑介绍：</p>
+	  [topic:neir]
+     </ul> 
+    </div> 
+      <div class="box_share"> 
+       <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> 
+        <span class="bds_more">分享到：</span> 
+        <a class="bds_qzone" title="分享到QQ空间" href="#"></a> 
+        <a class="bds_tqq" title="分享到腾讯微博" href="#"></a> 
+        <a class="bds_sqq" title="分享到QQ好友" href="#"></a> 
+        <a class="bds_tieba" title="分享到百度贴吧" href="#"></a> 
+        <a class="bds_tsina" title="分享到新浪微博" href="#"></a> 
+        <a class="bds_tqf" title="分享到腾讯朋友" href="#"></a> 
+        <a class="bds_msn" href="#"></a> 
+        <a class="bds_huaban" title="分享到花瓣" href="#"></a> 
+        <a class="shareCount" href="#" title="累计分享0次">0</a> 
+       </div>  
+      </div>
+	<img src="{cscms:indextempurl}images/300-250.jpg">
+   </div> 
+</div> 
+{cscms:indexbottom} 
+<script type="text/javascript" id="bdshare_js" data="type=tools&uid=89860593"></script>
+<script type="text/javascript" id="bdshell_js"></script> 
+<script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);</script>
+</body>
+</html>

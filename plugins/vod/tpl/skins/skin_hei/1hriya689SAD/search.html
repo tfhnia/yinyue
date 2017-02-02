@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>搜索：{cscms:zm}{cscms:key} - {cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script> 
+</head> 
+<body>
+{cscms:head}
+<div class="position"> 
+   <div class="text"> <span>当前位置：</span> <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('vod');{/cscmsphp}" title="视频">视频</a> &gt; <strong>搜索：{cscms:key}</strong> 
+   </div> 
+</div> 
+<div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+<div class="video_content">  
+    <div class="list"> 
+	    <div class="boxss">
+            <div class="title"><span>搜索：{cscms:key}{cscms:zm}</span></div> 
+            <div class="page_sort"> 
+                <ul class="right">
+	            {cscms:class table="vod_list" loop="5" fid="0" field="id,name" sort="xid" order="asc"}
+	                 <li><a href="[class:url link=lists,id]" class="sList">[class:name]</a><b></b> </li> 
+	            {/cscms:class}
+               </ul> 
+            </div>  
+	    </div>
+	    <div class="boxss">
+            <div class="page_sort" style="width: 960px;"> 
+                <ul class="left"> 
+				   <li><a style="background:none;">按字母查找：</a></li>
+				   {cscmszm:27}
+                   <li{if:'[zm:name]'=='{cscms:zm}'} class="on"{end if}><a href="{cscmsphp}linkurl('search','zm','[zm:name]',1);{/cscmsphp}">[zm:name]</a></li>
+				   {/cscmszm}
+                </ul> 
+            </div>  
+	    </div>
+        <div class="video_list">
+            <ul> 
+	            {cscms:vod table="vod" pagesize="50" field="id,name,pic" sort="addtime"}
+	            <li><a href="[vod:url link=play,id]" target="_blank" title="[vod:name]"><img src="[vod:pic dir=vod]"><span class="pic"></span><span class="bg"></span><span class="txt">[vod:name]</span></a></li>    
+	            {/cscms:vod}
+            </ul> 
+        </div> 
+        <div class="page">  
+           <div class="page_sort"> 
+              <div class="goto"> 
+                   {cscms:pagelist}
+              </div> 
+              <div class="page_link"> 
+                   <a class="prevten" href="{cscms:pageup}" title="前一页"> </a>
+                   {cscms:pagenum len=8} 
+                   <a class="nextten" href="{cscms:pagedown}" title="后一页"> </a>
+              </div> 
+           </div> 
+        </div> 
+     </div> 
+</div> 
+{cscms:indexbottom}
+</body>
+</html>

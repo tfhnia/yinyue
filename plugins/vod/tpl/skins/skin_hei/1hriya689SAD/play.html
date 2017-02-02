@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <link href="{cscms:indextempurl}css/vplay.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script> 
+</head> 
+<body>
+{cscms:head}
+<div class="position"> 
+   <div class="text"> <span>当前位置：</span> <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('vod');{/cscmsphp}" title="视频">视频</a> &gt; <strong>[vod:name]</strong> 
+   </div> 
+</div> 
+<div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+<div class="banner_text"> 
+    <div class="video_play"> 
+     <div class="cmp_left" style="padding-top:0px;"> 
+         <div id="player" style="width:650px;height:420px;">[vod:player]</div> 
+     </div> 
+     <!--播放列表--> 
+     <div class="other_video"> 
+      <h1>猜你喜欢</h1> 
+      <ul style="overflow:hidden;height:360px;" class="album_list" id="scrollbar">
+       {cscms:vod table="vod" field="id,name,pic,color" cid="auto" loop="20" sort="rhits"}
+       <li class="clearfix"><a title="[vod:name]" href="[vod:url link=play,id]"> <img src="[vod:pic dir=vod]" width="100" height="56" alt="[vod:name]" /> <span title="[vod:name]">[vod:name]</span> <span>[vod:zdy zd=vod_list,name,cid]</span> <span class="play">播放：<em>[vod:hits]</em></span> </a> </li>  
+	   {/cscms:vod}
+      </ul> 
+     </div>  
+    </div> 
+    <!--数据--> 
+    <div class="video-bar"> 
+     <div class="v-share left" id="js_videoShare"> 
+      <span class="v-share-title left cDGray">分享到：</span> 
+     </div> 
+     <div class="bdsharebuttonbox"> 
+      <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> 
+      <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a> 
+      <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> 
+      <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a> 
+      <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a> 
+      <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a> 
+      <a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a> 
+      <a href="#" class="bds_more" data-cmd="more"></a> 
+	  <a class="bds_count" data-cmd="count"> </a>
+     </div> 
+     <div class="v-hits right"> 
+      <span id="hits" title="播放:[vod:hits]">[vod:hits]次播放</span>  
+     </div> 
+    </div> 
+   </div> 
+   <div class="banner_text" style="margin:-5px auto;"> 
+   {vod:play}
+      <div class="vod_plist"> 
+           <div class="title"><span>[play:i].[play:name]</span></div> 
+           <ul class="left">
+               {vod:url order=desc}<li><a href="[url:link]">[url:name]</a></li>{/vod:url} 
+           </ul> 
+      </div>
+   {/vod:play}
+	  <div style="clear:both"></div>
+   </div>
+   <!--资料--> 
+   <div class="banner_text" style="margin:-10px auto;border-top: 1px solid #313131;"> 
+      <div class="video-digest"> 
+       <div class="user" style="margin-right: 50px;"> 
+        <img src="[vod:pic dir=vod]?size=140*140" width="140" height="140" /> 
+       </div> 
+       <div class="adgg180"> 
+        <img src="{cscms:indextempurl}images/180-150.jpg">
+       </div> 
+       <div class="cDGray"> 
+        <span class="item">名称：[vod:name]</span> 
+        <span class="item">时间：[vod:addtime style=Y-m-d]</span> 
+        <span class="item">分类：<a href="[vod:classlink]" target="_blank" title="[vod:classname]">[vod:classname]</a></span> 
+        <span class="item">导演：[vod:daoyan]</span> 
+       </div> 
+       <div class="tag"> 
+        <span class="item"><span class="cDGray">主演：</span>[vod:zhuyan]</span> 
+       </div> 
+       <p>介绍：</p> [vod:text]
+      </div> 
+   </div> 
+   <div class="banner_text"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+   <div class="vmalbum_content"> 
+    <div class="list"> 
+	   <div class="boxss">
+         <div class="title"><span>评论</span></div> 
+	   </div>
+	   <div class="banner_text">
+	   [vod:pl]
+	   </div>
+   </div> 
+</div> 
+{cscms:indexbottom}
+<script type="text/javascript">
+//导航滚动条
+$("#scrollbar").slimScroll({
+         height: 360,
+         size: "10px",
+		 //alwaysVisible:true,
+		 color: '#ccc'
+});
+</script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=1.js?cdnversion='+~(-new Date()/36e5)];</script> 
+</body>
+</html>

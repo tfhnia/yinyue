@@ -1,0 +1,34 @@
+<ul class="member_login">
+   <li><a target="_blank" href="[user:url ulink=index]" title="个人主页"><img src="[user:logo dir=logo]"></a></li> 
+   <li><a class="icon" href="[user:url userlink=space]" target="_blank" title="个人中心"> </a> </li> 
+   <li> <a class="icon inform" href="[user:url userlink=msg]" target="_blank" title="通知"> </a> </li> 
+   <li><a class="set_menu icon song " href="javascript:;" title="我的歌单"></a>
+    <div class="m_set_list menu navs1" style="display: none;">
+     <em></em>
+     <a class="list" target="_blank" href="{cscmsphp}spacelink('dance,add','dance');{/cscmsphp}"><b class="dan"></b>上传作品</a>
+     <a class="list" target="_blank" href="{cscmsphp}spacelink('fav','dance');{/cscmsphp}"><b class="like"></b>我收藏的</a>
+     <a class="list" target="_blank" href="{cscmsphp}spacelink('down','dance');{/cscmsphp}"><b class="download"></b>我下载的</a>
+    </div></li>
+   <li><a class="set_menu icon account " href="javascript:;" title="个人账户"></a>
+    <div class="m_set_list menu navs2" style="display: none;">
+     <em></em>
+     <a class="list" target="_blank" href="[user:url userlink=pay]"><b class="account"></b>个人账户</a>
+     <a class="list" target="_blank" href="[user:url userlink=pay]"><b class="query"></b>金币充值</a>
+     <a class="list" target="_blank" href="[user:url userlink=pay,group]"><b class="vip"></b>升级会员</a>
+     <a class="list" target="_blank" href="[user:url userlink=pay,lists]"><b class="score"></b>充值账单</a>
+    </div></li>
+   <li><a class="set_menu icon set" href="javascript:;" title="个人设置"> </a>
+    <div class="m_set_list menu navs3" style="display: none;">
+     <em></em>
+     <a class="list" target="_blank" href="[user:url userlink=edit]"><b class="setup"></b>个人设置</a>
+     <a class="list" target="_blank" href="[user:url userlink=edit,logo]"><b class="avatar"></b>修改头像</a>
+     <a class="list" href="javascript:;" onclick="{cscms:logout}"><b class="exit"></b>退出登录</a>
+    </div></li>
+  </ul>
+<script type="text/javascript">
+	$(".member_login li").hover(function() {
+		$(this).find(".m_set_list").show(10);
+	},function() {
+		$(this).find(".m_set_list").hide(30);
+	});
+</script> 

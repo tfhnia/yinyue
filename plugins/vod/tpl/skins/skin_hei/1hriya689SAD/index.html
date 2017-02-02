@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script> 
+</head> 
+<body>
+{cscms:head}
+<div class="position"> 
+   <div class="text"> <span>当前位置：</span> <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <strong>视频</strong> 
+   </div> 
+</div> 
+<div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+<div class="video_content"> 
+    <div class="list"> 
+	    <div class="boxss">
+            <div class="title"><span>人气推荐视频</span></div> 
+            <div class="page_sort"> 
+                <ul class="right" id="myTab">
+	            {cscms:class table="vod_list" loop="4" fid="0" field="id,name" sort="xid" order="asc"}
+	                 <li id="myTab_List[class:i]" class="{if:[class:i]==1}on{end if}" onmouseover="nTabs('myTab',[class:i]);"> <a href="[class:url link=lists,id]" class="sList">[class:name]</a><b></b> </li> 
+	            {/cscms:class}
+               </ul> 
+            </div>  
+	    </div>
+	    {cscms:class table="vod_list" loop="4" fid="0" field="id,name" sort="xid" order="asc"}
+        <div class="video_list" id="myTab_Content[class:i]"{if:[class:i]>1} style="display:none;"{end if}> 
+            <ul> 
+	            {cscmstype:vod table="vod" cid="auto" loop="10" field="id,name,pic" reco="1,2,3,4,5" sort="rhits"}
+	            <li><a href="[vod:url link=play,id]" target="_blank" title="[vod:name]"><img src="[vod:pic dir=vod]"><span class="pic"></span><span class="bg"></span><span class="txt">[vod:name]</span></a></li>    
+	            {/cscmstype:vod}
+            </ul> 
+        </div> 
+        {/cscms:class}
+    </div> 
+	{cscms:class table="vod_list" loop="4" fid="0" field="id,name" sort="xid" order="asc"}
+    <div class="list"> 
+	    <div class="boxss">
+            <div class="title"><span>[class:name]</span></div> 
+            <div class="page_sort"> 
+                <ul class="right">
+				<li class="on"><a href="[class:url link=lists,id]" class="sList">全部</a><b></b> </li>
+	            {cscmstype:classs table="vod_list" loop="5" fid="auto" field="id,name" sort="xid" order="asc"}
+	                 <li><a href="[classs:url link=lists,id]" class="sList">[classs:name]</a><b></b> </li> 
+	            {/cscmstype:classs}
+               </ul> 
+            </div>  
+	    </div>
+        <div class="video_list">
+            <ul> 
+	            {cscmstype:vod table="vod" cid="auto" loop="10" field="id,name,pic" sort="addtime"}
+	            <li><a href="[vod:url link=play,id]" target="_blank" title="[vod:name]"><img src="[vod:pic dir=vod]"><span class="pic"></span><span class="bg"></span><span class="txt">[vod:name]</span></a></li>    
+	            {/cscmstype:vod}
+            </ul> 
+        </div> 
+     </div> 
+     {/cscms:class}
+</div> 
+{cscms:indexbottom}
+</body>
+</html>
