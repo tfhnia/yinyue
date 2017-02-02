@@ -1,0 +1,29 @@
+<!--footer--> 
+<div class="bottom"> 
+   <div class="footer"> 
+    <strong><a href="{cscms:path}index.php/sitemap.xml" target="_blank">RSS订阅</a> | <a href="{cscms:path}index.php/baidu.xml" target="_blank">百度地图</a> | <a href="{cscms:path}index.php/google.xml" target="_blank">谷歌地图</a> | {cscms:stat}</strong> 
+    <br />Copyright &#169; 2008 - 2016 {cscms:weburl} , All Rights Reserved {cscms:webname} 版权所有
+    <br /><a href="mailto:{cscms:qq}">本站所有音乐均来自互联网搜集，版权为原作者所有，如有侵犯权益，请联系我们删除！</a>{cscms:icp}
+    <br /> 
+   </div> 
+</div> 
+<script src="{cscms:webpath}packs/js/jquery.lazyload.js?v=1.9.1"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   //图片延时
+   $("img.lazy").lazyload({effect: "fadeIn"});
+	var n=0;
+	var x=0;
+	var top_btn = $("<div id='top_btn'><a title='回到顶部' href='javascript:;'></a></span>");
+	$("body").append(top_btn);
+	var fe=$("#top_btn");
+	window.onscroll=function(){
+		x=(document.body.scrollTop||document.documentElement.scrollTop)+n;
+		if(x==0){fe.fadeOut().hide()}else{fe.fadeIn().show()};
+	};
+	$("#top_btn").click(function() {
+	    $('html,body').animate({scrollTop: '0px'}, 800);
+	});
+});
+</script>
+

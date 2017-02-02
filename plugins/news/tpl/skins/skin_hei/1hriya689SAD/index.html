@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script>
+  <style>.list .boxss ul.left a {margin-right: 10px;padding:5px 10px;}</style>
+</head> 
+<body>
+{cscms:head}
+   <div class="position"> 
+    <div class="text"> 
+     <span>当前位置：</span> 
+       <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <strong>文章首页</strong> 
+    </div> 
+   </div> 
+   <div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div>
+   <div class="news_content"> 
+    <div class="list">
+      <div class="boxss">
+        <div class="page_sort" style="width:960px;padding-top:0px;"> 
+            <ul class="left"> 
+			{cscms:class table="news_list" field="id,name" fid="0" order="asc"}
+               <li><a href="[class:url link=lists,id]">[class:name]</a></li>
+		    {/cscms:class}
+            </ul> 
+        </div>  
+	  </div>
+     </div>  
+   </div>
+   {cscms:class table="news_list" field="id,name" fid="0" loop="4" order="asc"}
+   <div class="news_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="title"><span>[class:name]</span></div> 
+      <div class="page_sort"> 
+      <ul class="right">
+       <li class="current"><a href="[class:url link=lists,id]">更多</a></li>
+      </ul> 
+      </div>  
+	 </div>
+    <div class="head"> <h2 class="title"></h2> </div> 
+    <div class="news_list"> 
+     <ul>
+	 {cscmstype:news table="news" field="id,name,addtime" cid="auto" loop="16" sort="addtime"}
+      <li><a href="[news:url zdy=news,id,show,id]" target="_blank" title="[news:name]"><i class="ico-statnews"></i>[news:name]</a><span>[news:addtime style=Y-m-d]</span></li>
+	 {/cscmstype:news}
+     </ul> 
+    </div> 	
+   </div> 
+  </div> 
+  {/cscms:class}
+{cscms:indexbottom}
+</body>
+</html>

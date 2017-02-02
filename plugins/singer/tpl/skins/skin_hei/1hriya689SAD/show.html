@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>[singer:name]_最新[singer:name]好听的歌曲_MV_资料图片_新歌_[singer:name]专辑_{cscms:webname}</title>
+  <meta name="Keywords" content="[singer:name],[singer:name]资料,[singer:name]歌曲,[singer:name]专辑,[singer:name]好听的歌,[singer:name]新歌,[singer:name]图片,{cscms:webname}" />
+  <meta name="Description" content="[singer:name]好听的歌曲，{cscms:webname}收集所有[singer:name]的歌曲大全，包含最新[singer:name]专辑免费在线试听、[singer:name]的歌曲mp3下载、以及[singer:name]资料、MV、新歌和[singer:name]专辑等信息。" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <link href="{cscms:indextempurl}css/singer.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script> 
+</head> 
+<body>
+{cscms:head}  
+   <div class="position"> 
+    <div class="text"> 
+     <span>当前位置：</span> 
+       <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('singer');{/cscmsphp}" title="{cscms:webname}">歌手首页</a> &gt; <strong>[singer:name]</strong> 
+    </div> 
+   </div> 
+   <div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+   <div class="info"> 
+    <div class="head "> 
+     <h2 class="title">[singer:name]个人资料</h2> 
+    </div> 
+    <div class="digest"> 
+     <div class="user"> 
+      <a href="[singer:url link=show]" target="_blank"><img class="avatar-58" src="[singer:pic dir=singer]" width="140" height="140" /><p>[singer:name]</p></a> 
+     </div> 
+     <div class="cDGray"> 
+      <ul> 
+       <li>姓名：<span>[singer:name]</span></li> 
+       <li>性别：<span>[singer:sex]</span></li> 
+       <li>别名：<span>[singer:nichen]</span></li> 
+       <li>国籍：<span>[singer:nat]</span></li> 
+       <li>语言：<span>[singer:yuyan]</span></li> 
+       <li>出生地：<span>[singer:city]</span></li> 
+       <li>生日：<span>[singer:sr]</span></li> 
+       <li>星座：<span>[singer:xingzuo]</span></li> 
+       <li>身高：<span>[singer:height]</span></li> 
+       <li>体重：<span>[singer:weight]</span></li> 
+       <li>人气：<span>[singer:hits]</span></li> 
+       <li>更新时间：<span>[singer:addtime style=Y-m-d]</span></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="content">
+      <div id="cText"> <p>[singer:name]个人资料：</p> <p> [singer:content]</p>  </div> 
+      <script language="javascript"> var conText = ""; hideText("cText", 300, "[↓显示详细资料]", "[↑隐藏部分资料]"); </script>
+	  </div> 
+   </div> 
+   <div class="home_content"> 
+    <div class="con_left"> 
+     <div class="title"> 
+      <span> <b>[singer:name]热门歌曲</b> </span> 
+      <div class="right"> 
+       <strong></strong> 
+      </div> 
+     </div> 
+     <div class="dance_new newestdj"> 
+      <ul class="share_list song" id="f1"> 
+       <li class="title"> 
+        <div class="song">舞曲名字</div> 
+        <div class="impression" title="加入播放列表">添加</div> 
+	   </li>   
+{cscms:dance table="dance" field="id,name" loop="8" singerid="auto" sort="hits" order="desc"}
+       <li class="c1 c1 "> 
+        <div class="song"> 
+         <span class="cbox"><input type="checkbox" name="check" value="[dance:id]" /></span> 
+         <div class="aleft"> 
+          <a class="mname" href="[dance:url zdy=dance,id,play,id]" target="p" title="[dance:name]">[dance:name]</a> 
+         </div> 
+        </div> 
+        <div class="impression"> 
+         <span class="icon"><a class="add" target="p" href="[dance:url zdy=dance,id,play,id]"></a></span> 
+        </div> 
+		</li> 
+{/cscms:dance}
+      </ul> 
+      <div class="page"> 
+       <div class="play_button"> 
+        <a class="on_select_all" href="javascript:;" id="selectAll" onclick="playsong('xuan','f1');">全选</a> 
+        <a class="select_play" href="javascript:;" onclick="playsong('play','f1');">播放</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+
+    <div class="dance_new newest"> 
+     <div class="title" style="width: 500px;">最新[singer:name]好听的歌曲</div> 
+     <ul class="right"> 
+	 <li class="on"> <a href="[singer:url link=music,id]" rel="nofollow" class="sList">更多</a><b></b> </li> 
+     </ul>
+      <ul class="share_list song" id="f2"> 
+       <li class="title"> 
+        <div class="song">舞曲名字</div> 
+        <div class="impression" title="加入播放列表">添加</div> </li> 
+       <li class="title2"> 
+        <div class="song">舞曲名字</div> 
+        <div class="impression" title="加入播放列表">添加</div> 
+	   </li>
+{cscms:dance table="dance" field="id,name" loop="16" singerid="auto" sort="addtime" order="desc"}
+       <li class="{if:[dance:i]%2==1}c3{else}c1{end if}"> 
+        <div class="song"> 
+         <span class="cbox"><input type="checkbox" name="check" value="[dance:id]" /></span> 
+         <div class="aleft"> 
+          <a class="mname" href="[dance:url zdy=dance,id,play,id]" target="p" title="[dance:name]">[dance:name]</a> 
+         </div> 
+        </div> 
+        <div class="impression"> 
+         <span class="icon"><a class="add" target="p" href="[dance:url zdy=dance,id,play,id]"></a></span> 
+        </div> 
+	   </li> 
+{/cscms:dance}
+      </ul> 
+      <div class="page"> 
+       <div class="play_button"> 
+        <a class="on_select_all" href="javascript:;" id="selectAll" onclick="playsong('xuan','f2');">全选</a> 
+        <a class="select_play" href="javascript:;" onclick="playsong('play','f2');">播放</a> 
+       </div> 
+      </div>
+    </div> 
+   </div> 
+  <!--ialbum-->
+   <div class="vmalbum_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="title"><span>[singer:name]歌曲专辑</span></div> 
+      <div class="page_sort"> 
+      <ul class="right">
+       <li class="current"><a href="[singer:url link=album,id]" target="_blank" rel="nofollow">更多</a></li>
+      </ul> 
+      </div>  
+	 </div>
+    <div class="vmalbum_list"> 
+     <ul> 
+{cscms:topic table="dance_topic" loop="12" singerid="auto" sort="addtime"}
+	  <li><a href="[topic:url zdy=dance,id,topic/show]" target="_blank" title="[topic:name]"><img src="[topic:pic dir=dancetopic]"><span class="pic"></span><span class="bg"></span><span class="txt">[topic:name]</span></a></li> 
+{/cscms:topic}
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <!--video--> 
+  <div class="banner_text"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+   <div class="video_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="title"><span>[singer:name]最新视频</span></div> 
+      <div class="page_sort"> 
+      <ul class="right">
+       <li class="current"><a href="[singer:url link=mv,hits]" target="_blank" rel="nofollow">更多</a></li>
+      </ul> 
+      </div>  
+	 </div>
+    <div class="video_list"> 
+     <ul> 
+	 {cscms:vod table="vod" field="id,name,pic" loop="10" singerid="auto" sort="addtime"}
+	  <li><a href="[vod:url zdy=vod,id,play,id]" target="_blank" title="[vod:name]"><img src="[vod:pic dir=vod]"><span class="pic"></span><span class="bg"></span><span class="txt">[vod:name]</span></a></li>  
+	  {/cscms:vod}
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+<!--ialbum-->
+   <div class="vmalbum_content"> 
+    <div class="list"> 
+	<div class="boxss">
+     <div class="title"><span>[singer:name]最新相册</span></div> 
+      <div class="page_sort"> 
+      <ul class="right">
+      <li class="current"><a href="[singer:url link=pic,id]" target="_blank" rel="nofollow">更多</a></li>
+      </ul> 
+      </div>  
+	 </div>
+    <div class="vmalbum_list"> 
+     <ul>  
+{cscms:pic table="pic_type" field="id,name,pic" loop="12" singerid="auto" sort="addtime" order="desc"}
+	  <li><a href="[pic:url zdy=pic,id,show,id]" target="_blank" title="[pic:name]"><img src="[pic:pic dir=pic]"><span class="bg"></span><span class="txt">[pic:name]</span></a></li> 
+{/cscms:pic}
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+{cscms:indexbottom}
+</body>
+</html>

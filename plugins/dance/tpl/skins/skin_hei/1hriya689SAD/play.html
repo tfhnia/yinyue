@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+  <title>{cscms:title}</title> 
+  <meta name="Keywords" content="{cscms:keywords}" />
+  <meta name="Description" content="{cscms:description}" />
+  <link href="{cscms:indextempurl}css/style.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="{cscms:indextempurl}js/common.js"></script>
+  <script type="text/javascript">
+  var dance_id=[dance:id];
+  var dance_cid=[dance:cid];
+  var dance_name='[dance:name]';
+  var dance_link='[dance:url link=play,id]';
+  var dance_path='{cscmsphp}escape(annexlink('[dance:zdy zd=dance_server,purl,fid][dance:purl]'));{/cscmsphp}';
+  bfqzt();
+  </script>
+  <script type="text/javascript" src="{cscms:indextempurl}js/player.js"></script>
+</head> 
+<body>
+{cscms:indexhead}  
+<div class="position"> 
+   <div class="text"> <span>当前位置：</span> <a href="{cscms:path}" title="{cscms:webname}">{cscms:webname}</a> &gt; <a href="{cscmsphp}cscmslink('dance');{/cscmsphp}" target="_blank" title="音乐">音乐</a> &gt; <a href="[dance:classlink]" target="_blank" title="[dance:classname]">[dance:classname]</a> &gt; <strong>[dance:name]</strong> 
+   </div> 
+  </div> 
+  <div class="banner_top"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+  <div class="play_content"> 
+   <div class="content"> 
+    <div class="player"> 
+     <h1>[dance:name]</h1> 
+     <div class="playbox"> 
+      <div class="playact"> 
+	      <div class="flash" id="pFlash"></div>
+		  <script type="text/javascript">cmpplay("pFlash");</script>
+		  <div class="playmode">
+			  <ul>
+				<li class="sequent selected" title="单曲循环" id="listLoop">
+					<a href="javascript:;" onclick="playMode(1);"></a>
+				</li>
+				<li class="random" title="列表循环" id="singleCycle">
+					<a href="javascript:;" onclick="playMode(2);" class="ran"></a>
+				</li>
+			  </ul>
+		  </div>
+      </div> 
+      <div class="box_share"> 
+       <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> 
+        <span class="bds_more">分享到：</span> 
+        <a class="bds_qzone" title="分享到QQ空间" href="#"></a> 
+        <a class="bds_tqq" title="分享到腾讯微博" href="#"></a> 
+        <a class="bds_sqq" title="分享到QQ好友" href="#"></a> 
+        <a class="bds_s51" title="分享到51游戏社区" href="#"></a> 
+        <a class="bds_tieba" title="分享到百度贴吧" href="#"></a> 
+        <a class="bds_tsina" title="分享到新浪微博" href="#"></a> 
+        <a class="bds_baidu" title="分享到百度搜藏" href="#"></a> 
+        <a class="bds_renren" title="分享到人人网" href="#"></a> 
+        <a class="bds_t163" title="分享到网易微博" href="#"></a> 
+        <a class="bds_douban" title="分享到豆瓣网" href="#"></a> 
+        <a class="bds_taobao" title="分享到我的淘宝" href="#"></a> 
+        <a class="bds_mshare" title="分享到一键分享" href="#"></a> 
+        <a class="bds_tsohu" title="分享到搜狐微博" href="#"></a> 
+        <a class="bds_tqf" title="分享到腾讯朋友" href="#"></a> 
+        <a class="bds_msn" href="#"></a> 
+        <a class="bds_huaban" title="分享到花瓣" href="#"></a> 
+        <a class="shareCount" href="#" title="累计分享0次">0</a> 
+       </div> 
+      </div> 
+      <div class="playli"> 
+       <div class="tabs"> 
+        <a href="javascript:void(0)" sid="cookie" class="selected">播放列表</a> 
+        <a href="javascript:void(0)" sid="hits">本类排行</a> 
+        <a href="javascript:void(0)" sid="reco">本类推荐</a> 
+        <a href="javascript:void(0)" sid="ri">今日人气</a> 
+        <a href="javascript:void(0)" sid="news">最近更新</a> 
+        <a href="javascript:void(0)" sid="fav">我收藏的</a> 
+       </div> 
+       <div class="lists"> 
+        <ul class="music_list" id="music_list"></ul> 
+       </div> 
+       <div class="hr"> 
+        <div class="listaction"> 
+         <a href="javascript:void(0)" onclick="playsong('xuan', 'music_list');return false;" class="select">全选</a> 
+         <a href="javascript:void(0)" class="play" onclick="playsong('play', 'music_list');return false;">播放</a> 
+		 <a href="javascript:void(0)" onclick="play_up();" title="下一首" class="pre_next">上一首</a> 
+		 <a href="javascript:void(0)" onclick="play_next(1);" title="上一首" class="pre_next">下一首</a> 
+         <span id="list_do"><a href="javascript:void(0)" onclick="del_history();return false;" class="his">清除列表</a></span> 
+        </div> 
+       </div> 
+      </div> 
+      <script type="text/javascript">set_tab('cookie');</script> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="left"> 
+    <div class="userinfo" id="userInfos"> 
+     <span> <i><a target="_blank" href="[dance:url ulink=index]">[dance:user zd=nichen]</a></i> </span> 
+     <div class="face"> 
+      <img src="[dance:user zd=logo]?size=200*200" alt="[dance:user zd=nichen]" /> 
+     </div> 
+     <ul class="info_list"> 
+      <li> <a href="[dance:url ulink=friend]" target="_blank"> <span>[dance:count zdy=friend,uid,uida]</span> <strong>关注</strong> </a> </li> 
+      <li> <a href="[dance:url ulink=fans]" target="_blank"> <span>[dance:count zdy=fans,uid,uida]</span> <strong>粉丝</strong> </a> </li> 
+      <li class="last"> <a href="[dance:url ulink=dance]" target="_blank"> <span>[dance:count zdy=dance,uid,uid]</span> <strong>分享</strong> </a> </li> 
+     </ul> 
+    </div> 
+    <div class="box"> 
+		<div class="past_btn"> <a href="javascript:;" onclick="dance_ding();"> <i></i> <span>推荐</span> <strong id="dhits">[dance:dhits]</strong> </a> </div> 
+		<div class="default_btn"> <a href="javascript:;" onclick="dance_fav();"> <i></i> <span class="likeClick">收藏</span> <strong id="shits">[dance:shits]</strong> </a> </div> 
+		<div class="downclick_btn"> <a href="[dance:url link=down,id]" title="下载本首舞曲" target="_blank"> <i></i> <span>下载</span> <strong>[dance:xhits]</strong> </a> </div> 
+		<div class="moods"> <i></i> <span>人气</span> <strong>[dance:hits]</strong> </div> 
+    </div>
+   </div> 
+   <div class="right"> 
+    <div class="g300"><img src="{cscms:indextempurl}images/300-250.jpg"></div> 
+    <div class="g300"><img src="{cscms:indextempurl}images/300-250.jpg"></div> 
+   </div> 
+   <div class="banner"><img src="{cscms:indextempurl}images/ad960_904.jpg"></div> 
+   <div class="left_bot"> 
+    <div class="recom"> 
+     <span> <h2>最新上传[dance:classname]</h2> <strong><a target="_blank" href="[dance:classlink]">更多</a></strong> </span> 
+     <ul id="f1"> 
+	 {cscms:dance table="dance" field="id,name,uid" cid="auto" loop="24" sort="addtime" order="desc"}
+      <li> 
+       <div class="song"> 
+        <span class="cbox"> <input type="checkbox" name="check" value="[dance:id]"/> </span> 
+        <div class="aleft"> 
+         <a class="mname" href="[dance:url link=play,id]">[dance:name]</a> 
+        </div> 
+       </div> 
+       <div class="face"> 
+        <a uid="[dance:uid]" class="user_card" href="[dance:url ulink=index]" target="_blank" title="[dance:user zd=nichen]"> <img width="20" src="[dance:user zd=logo]"/> </a> 
+       </div> 
+      </li> 
+	 {/cscms:dance}
+     </ul> 
+     <div class="c1"> 
+      <div class="button"> 
+       <div class="but_left"> 
+        <input type="checkbox" hidefocus="true" id="selectRecommend" value="recommendList" class="allSelect" />
+        <label for="selectRecommend" onclick="playsong('xuan','f1');">全选/反选</label> 
+       </div> 
+       <div class="but_right"> 
+        <a class="btn_playback" title="弹出播放" onclick="playsong('play','f1');" href="javascript:;">播放</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="right_bot"> 
+    <div class="else"> 
+     <div class="title">
+      <span><h2>[dance:user zd=nichen]的其他舞曲</h2><strong><a target="_blank" href="[dance:url ulink=dance]">更多</a></strong></span>
+     </div> 
+     <ul class="list"> 
+	{cscms:dance table="dance" field="id,name" uid="auto" loop="8" sort="addtime" order="desc"}
+			<li class="{if:[dance:i]==1}pink{end if}{if:[dance:i]==2}blue{end if}{if:[dance:i]==3}green{end if}{if:[dance:i]%2!=1} c1{end if}"><span class="songtitle"><small>[dance:i]</small><a class="name" href="[dance:url zdy=dance,id,play,id]" title="[dance:name]" hidefocus="true">[dance:name]</a></span><span class="action"><a class="add" onclick="dancePlayer.addPlayer([dance:id]);" href="javascript:;" title="加入列表"></a></span></li>
+	{/cscms:dance}
+     </ul> 
+    </div> 
+    <div class="introduce"> 
+     <span><h2>舞曲信息介绍</h2></span> 
+    </div> 
+    <div id="scrollbar2"> 
+     <ul> 
+      <li>试听格式：m4a</li> 
+      <li>试听音质：64Kbps</li> 
+      <li>下载格式：mp3</li> 
+      <li>下载音质：320Kbps</li> 
+	  <li>舞曲时长：[dance:sc]</li>
+	  <li>文件大小：[dance:dx]</li>
+	  <li>舞曲类型：[dance:classname]</li>
+	  <li>上传时间：[dance:addtime style=Y-m-d]</li>
+	  <li class="address">
+		  下载地址：<a href="[dance:url link=down,id]" target="_blank">点击进入本首舞曲下载页面</a>
+	  </li> 
+     </ul> 
+    </div> 
+    <div class="first"> 
+     <span>上一首：</span> <a class="name" title="[dance:sname]" href="[dance:slink]">[dance:sname]</a>
+     <span>下一首：</span> <a class="name" title="[dance:xname]" href="[dance:xlink]">[dance:xname]</br></a>
+    </div> 
+   </div> 
+   <ul class="directory"> 
+    <li>为了保障在线试听的流畅性，本站所提供在线试听的[dance:name]是经过压缩处理，其音质和本站提供下载的mp3文件有很大的差别。</li> 
+    <li>本站下载的<strong>[dance:name]</strong>是原始音源的MP3文件，绝无压缩，比特率为192Kbps到320Kbps，音质方面绝对保证清脆高清晰。</li> 
+    <li>本页只提供[dance:name]在线试听，如果要下载此MP3舞曲，请您登录会员后进入下载页面下载。</li> 
+    <li>这首[dance:name]是由本站会员上传，如果这首舞曲存在任何版权问题，请与我们联系，我们会及时处理。</li> 
+    <li class="no">衷心感谢会员<a target="_blank" href="[dance:url ulink=index]">[dance:user zd=nichen]</a>上传本首舞曲与大家一起分享，同时我们也欢迎广大原创DJ与DJ爱好者一起加入本站分享舞曲。</li> 
+   </ul> 
+</div> 
+{cscms:indexbottom}  
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=1"></script>
+</body>
+</html>
