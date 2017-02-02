@@ -1,4 +1,0 @@
-<?php
-define('CS_Upy_Name',''); //ÓÖÅÄÔÆÊÚÈ¨ÕËºÅ  
-define('CS_Upy_Pwd',''); //ÓÖÅÄÔÆÊÚÈ¨ÃÜÂë   
-define('CS_Upy_Bucket',''); //ÓÖÅÄÔÆ¿Õ¼äÃû 
