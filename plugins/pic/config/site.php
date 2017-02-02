@@ -2,8 +2,8 @@
 return array (
   'Web_Mode' => 1,
   'Skins_Dir' => 'default/html/',
-  'Mobile_Dir' => 'default/html/',
   'User_Dir' => 'default/html/',
+  'Mobile_Dir' => 'default/html/',
   'Mobile_Is' => 1,
   'Cache_Is' => 0,
   'Cache_Time' => 1800,

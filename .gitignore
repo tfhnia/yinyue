@@ -1,15 +1,15 @@
 #### cscms files
-/cscms/
+cscms/*
 
 #### cache files
-/cache/
+cache/*
 
 #### config files
+plugins/*
 
-/plugins/dance/config/
-/plugins/news/config/
-/plugins/pic/config/
-/plugins/singer/config/
-/plugins/vod/config/
-
+#### install files
+.user.ini
+attachment/other/backup_20170202/
+packs/install/install.lock
+packs/install/plub_install.lock
 
