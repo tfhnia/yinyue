@@ -37,7 +37,7 @@ define('CS_Cache_Dir','sql');
 define('CS_Cache_Time',7200);
 
 //encryption_key密钥
-define('CS_Encryption_Key','cscms_JudPrrCxnG');
+define('CS_Encryption_Key','cscms_8ujUBOq0BP');
 
 //后台口令卡总开关,1为开，0为关闭
 define('CS_Safe_Card',1);

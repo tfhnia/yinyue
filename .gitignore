@@ -13,3 +13,13 @@ attachment/other/backup_20170202/
 packs/install/install.lock
 packs/install/plub_install.lock
 
+#### others
+cache/cscms_time/time.txt
+cscms/lib/Cs_Config.php
+cscms/lib/Cs_DB.php
+plugins/dance/config/site.php
+plugins/news/config/site.php
+plugins/pic/config/site.php
+plugins/singer/config/site.php
+plugins/vod/config/site.php
+

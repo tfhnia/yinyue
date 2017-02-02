@@ -1,11 +1,11 @@
 <?php
-define('Web_Name','DJ小丽'); //站点名称  
-define('Web_Url','djxiaoli.com'); //站点域名  
-define('Web_Path','/'); //站点路径  
+define('Web_Name','程氏CMSv4'); //站点名称  
+define('Web_Url','localhost'); //站点域名  
+define('Web_Path','/yinyue/'); //站点路径  
 define('Admin_Code','root');  //后台验证码  
 define('Web_Off',1);  //网站开关  
 define('Web_Onneir','网站升级中...');  //网站关闭内容  
-define('Web_Mode',0);  //网站运行模式  
+define('Web_Mode','.1.');  //网站运行模式  
 define('Html_Index','index.html');  //主页静态URL  
 define('Html_StopTime',2);  //生成间隔秒数  
 define('Html_PageNum',20);  //每页生成数量  
