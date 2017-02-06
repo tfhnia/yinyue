@@ -1,15 +1,16 @@
 #### cscms files
-cscms/*
+/cscms/
 
 #### cache files
-/cache
+/cache/
 
 #### config files
-/plugins
+/plugins/
 
-#### install files
+####
 .user.ini
-/attachment
+/attachment/music/201702/04/ZChTJN0oEYgDC2mvySq4.mp3
+/attachment/
 /packs/install/install.lock
 /packs/install/plub_install.lock
 
