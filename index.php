@@ -47,3 +47,4 @@ define('APPPATH', FCPATH.$app_folder.'/'); //板块目录
 define('CSCMSPATH', FCPATH.'packs/');  //CSCMS附件扩展目录
 
 require_once BASEPATH.'core/CodeIgniter.php';  //加载CI核心文件
+
